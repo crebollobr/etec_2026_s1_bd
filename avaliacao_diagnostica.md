@@ -1,65 +1,115 @@
-# Diagnóstico — Banco de Dados
+# Avaliação Diagnóstica — Banco de Dados
 
-Olá! Estou assumindo a turma de Banco de Dados a partir desta semana. Para conseguir preparar as próximas aulas de um jeito que faça sentido para vocês, preciso entender o que já foi visto até aqui e o que de fato ficou claro.
-
-**Como responder:** responda este e-mail copiando as perguntas e escrevendo a resposta logo abaixo de cada uma. **Não vale nota.** Respostas honestas me ajudam mais do que respostas "certas". Se não lembrar ou não souber, escreva "não vi" ou "não lembro" — isso já é uma informação útil para mim.
-
-**Prazo para resposta:** [preencher data]
+**Aluno:**
+**Data:**
 
 ---
 
-## Parte 1 — O que foi ensinado até aqui
+## Instruções
 
-**1.** Quais assuntos vocês viram nas aulas de Banco de Dados até agora? Liste tudo que conseguir lembrar, em qualquer ordem.
-
-**2.** Qual ferramenta (programa) vocês usaram nas aulas? (Por exemplo: MySQL Workbench, SQL Server, XAMPP, phpMyAdmin, outro.) Vocês chegaram a usar no laboratório ou só viram em demonstração no projetor?
-
-**3.** Teve algum projeto, trabalho ou exercício maior? Conte rapidamente do que se tratava.
-
-**4.** Vocês receberam algum material (apostila, slides, PDF, link de vídeo)? Se sim, qual e onde está disponível?
-
----
-
-## Parte 2 — O que você consegue explicar
-
-Responda com suas próprias palavras. Pode ser curto. Se não souber, escreva "não sei".
-
-**5.** O que é um banco de dados? O que é uma tabela? O que é uma chave primária?
-
-**6.** Você já ouviu falar em "modelo entidade-relacionamento" (também chamado de **DER** ou diagrama ER)? Se sim, para que ele serve?
-
-**7.** Você já ouviu falar em "normalização" (1FN, 2FN, 3FN)? Se sim, para que serve?
-
-**8.** SQL — você consegue dizer o que cada um destes comandos faz? Se não souber algum, escreva "não sei".
-
-- `SELECT`
-- `INSERT`
-- `CREATE TABLE`
-- `WHERE`
-- `JOIN`
+- Responda este e-mail copiando cada pergunta e escrevendo a resposta logo abaixo.
+- Nas questões de múltipla escolha, indique a letra (ex.: `Resposta: b`).
+- Nas questões de SQL, escreva o comando exatamente como o digitaria no MySQL Workbench.
+- **Não consulte material, internet ou colega.**
+- **Esta avaliação não vale nota.** O objetivo é verificar o que já está consolidado e o que ainda precisa ser trabalhado.
+- Se não souber responder alguma questão, escreva `não sei`. É uma resposta válida.
 
 ---
 
-## Parte 3 — Prática
+## Parte 1 — Conceitos
 
-**9.** Você já chegou a **escrever** SQL você mesmo no computador (não só ver no quadro/projetor)? Se sim, o que chegou a fazer?
+**1.** O que é uma **chave primária** em uma tabela?
 
-**10.** Você já chegou a **criar uma tabela** ou um banco de dados na ferramenta?
+a) Uma senha que protege o banco de dados.
+b) Um campo que identifica de forma única cada linha da tabela.
+c) A primeira coluna de qualquer tabela.
+d) Um campo que sempre contém números inteiros.
 
-**11.** Você tem algum programa de banco de dados instalado no seu computador pessoal? Qual?
+**2.** Considere a tabela `matricula(id, aluno_ra, curso_id)`. O campo `aluno_ra` aponta para a tabela `aluno`. Esse campo é:
 
-**12.** Você tem computador e internet em casa para estudar e praticar fora da aula?
+a) Chave primária.
+b) Chave estrangeira.
+c) Índice único.
+d) Atributo derivado.
+
+**3.** Qual das opções abaixo **NÃO** é um Sistema Gerenciador de Banco de Dados?
+
+a) MySQL
+b) PostgreSQL
+c) Microsoft Excel
+d) SQL Server
+
+**4.** O que significa a sigla **SQL**?
+
+**5.** Em uma frase, explique o que é uma **tabela** em um banco de dados relacional.
+
+**6.** Em um diagrama Entidade-Relacionamento (DER), o que normalmente um **retângulo** representa?
+
+a) Um atributo.
+b) Um relacionamento.
+c) Uma entidade.
+d) Uma chave estrangeira.
 
 ---
 
-## Parte 4 — Como posso te ajudar melhor
+## Parte 2 — SQL: escreva os comandos
 
-**13.** De **0 a 10**, qual sua segurança com o conteúdo de Banco de Dados visto até agora?
+Considere a tabela `aluno` com as seguintes colunas:
 
-**14.** O que ficou mais confuso ou difícil até aqui? Tem algum tópico que você gostaria que eu revisasse antes de seguirmos para o próximo?
+| Coluna | Tipo          |
+|--------|---------------|
+| ra     | INT           |
+| nome   | VARCHAR(100)  |
+| curso  | VARCHAR(50)   |
+| nota   | DECIMAL(4,2)  |
 
-**15.** Algo mais que você queira me contar para que eu te ajude melhor neste semestre? (livre — pode ser sobre dificuldades, horários, expectativas, etc.)
+**7.** Escreva o comando SQL que retorna **todos os dados** da tabela `aluno`.
+
+**8.** Escreva o comando SQL que retorna **apenas o nome** dos alunos do curso `'Informatica'`.
+
+**9.** Escreva o comando SQL que retorna os alunos com `nota` **maior que 7**.
+
+**10.** Escreva o comando SQL que retorna os alunos **ordenados pelo nome em ordem alfabética**.
+
+**11.** Escreva o comando SQL que **insere** um aluno com: ra `2024010`, nome `'João Pereira'`, curso `'Informatica'`, nota `8.5`.
+
+**12.** Escreva o comando SQL que **atualiza** a nota do aluno de ra `2024001` para `9.0`.
+
+**13.** Escreva o comando SQL que **remove** todos os alunos do curso `'Administracao'`.
+
+**14.** Escreva o comando SQL que **cria** a tabela `aluno` com as colunas descritas acima, definindo `ra` como chave primária.
 
 ---
 
-*Obrigado pela colaboração. Pode me responder por e-mail até a data acima. Quanto mais detalhe melhor — mas não precisa escrever um romance.*
+## Parte 3 — SQL: interpretar
+
+Para cada comando abaixo, explique em uma frase **o que ele faz**.
+
+**15.**
+```sql
+SELECT COUNT(*) FROM aluno WHERE curso = 'Informatica';
+```
+
+**16.**
+```sql
+SELECT curso, AVG(nota) FROM aluno GROUP BY curso;
+```
+
+**17.**
+```sql
+SELECT a.nome, c.titulo
+FROM aluno a
+JOIN curso c ON a.curso_id = c.id;
+```
+
+---
+
+## Parte 4 — Autoavaliação
+
+Em uma escala de **0 a 10**:
+
+**18.** Qual sua confiança em escrever um `SELECT` com `WHERE` sem consultar material?
+
+**19.** Qual sua confiança em criar uma tabela com SQL (`CREATE TABLE`)?
+
+**20.** Qual sua confiança em desenhar um diagrama Entidade-Relacionamento a partir de uma situação descrita em texto?
