@@ -282,19 +282,29 @@ DROP DATABASE nome_sobrenome_20260528;
 
 ## 12. Atividade prática
 
-**Tarefa:** envie por e-mail um arquivo `.sql` (ou o corpo do e-mail) contendo a sequência de comandos abaixo, **executada no seu próprio banco** `seu_nome_sobrenome_20260528`.
+> 🎯 **Atenção:** a tabela da atividade é **diferente** da que usamos na aula (`pessoa`). Aqui você vai trabalhar com uma tabela **`produto`** — o objetivo é aplicar os comandos em algo novo, não copiar a demonstração.
 
-1. `CREATE DATABASE` com seu nome + data.
-2. `USE` do banco que você criou.
-3. `CREATE TABLE pessoa` com `id`, `nome`, `cpf`, `data_nascimento`.
-4. **3 `INSERT`s** com dados fictícios (pode ser personagens, colegas etc.).
-5. Um `SELECT *` mostrando os 3 registros.
-6. Um `UPDATE` alterando o nome de uma das pessoas + `SELECT` para confirmar.
-7. Um `ALTER TABLE` adicionando a coluna **`rg VARCHAR(20)`**.
-8. Um `UPDATE` preenchendo o `rg` de pelo menos uma pessoa + `SELECT` para confirmar.
-9. Um `DELETE` removendo uma das pessoas + `SELECT` final.
-10. `DROP TABLE pessoa;`
+**Cenário:** você vai modelar o catálogo de uma pequena loja.
+
+**Tarefa:** envie por e-mail um arquivo `.sql` (ou o corpo do e-mail) com a sequência de comandos abaixo, **executada no seu próprio banco** `seu_nome_sobrenome_20260528`.
+
+1. `CREATE DATABASE` com seu nome + data e dê `USE` nele.
+2. Crie a tabela **`produto`** com, no mínimo, estas colunas:
+   - `id` — inteiro, chave primária, `AUTO_INCREMENT`
+   - `nome` — texto, obrigatório (`NOT NULL`)
+   - `preco` — número com 2 casas decimais (`DECIMAL(10,2)`)
+   - `data_cadastro` — data
+3. Faça **4 `INSERT`s** com produtos fictícios à sua escolha (ex.: "Teclado", "Cadeira", "Caneca"...). Coloque preços diferentes.
+4. Um `SELECT *` mostrando todos os produtos.
+5. Um `SELECT` com `WHERE` listando só os produtos com `preco` **maior que 50** (use `ORDER BY preco`).
+6. Um `UPDATE` aumentando o preço de **um** produto específico + `SELECT` para confirmar.
+7. Um `ALTER TABLE` adicionando a coluna **`quantidade_estoque INT`**.
+8. Um `UPDATE` preenchendo o `quantidade_estoque` de pelo menos dois produtos + `SELECT` para confirmar.
+9. Um `DELETE` removendo **um** produto + `SELECT` final mostrando como ficou a tabela.
+10. `DROP TABLE produto;`
 11. `DROP DATABASE seu_nome_sobrenome_20260528;`
+
+**Desafio opcional (extra):** faça um `SELECT` que mostre apenas `nome` e `preco`, dos produtos cujo nome **começa com uma letra específica** — pesquise o operador `LIKE` (ex.: `WHERE nome LIKE 'C%'`).
 
 **Entrega:**
 
